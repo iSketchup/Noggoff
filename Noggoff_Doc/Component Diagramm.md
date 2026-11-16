@@ -13,7 +13,7 @@ F -right-  gh
 ```
 
 ## Figure
-- leben
+- HP
 - damgae
 - damage mult 
 - size
