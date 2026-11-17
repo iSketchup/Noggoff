@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://cyb1a4vcqave2"]
 
-[node name="Node2D" type="Node2D" unique_id=1966499029]
+[ext_resource type="Script" uid="uid://c5mbbvpvkl2mt" path="res://scripts/flicker.gd" id="1_l1kmf"]
+
+[node name="Flicker" type="Control" unique_id=1632748019]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l1kmf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2044950441]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 104.0
+offset_bottom = 48.0

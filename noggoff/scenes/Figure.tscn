@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://byu4jddtq2uv4"]
 
-[ext_resource type="Script" uid="uid://ctaqadsyooe2p" path="res://scenes/figure.gd" id="1_nvhyx"]
+[ext_resource type="Script" path="res://scenes/figure.gd" id="1_nvhyx"]
+[ext_resource type="PackedScene" uid="uid://cyb1a4vcqave2" path="res://scenes/Flicker.tscn" id="2_muxo5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxer5"]
+radius = 33.0
 
 [node name="Figure" type="CharacterBody2D" unique_id=680940300]
 script = ExtResource("1_nvhyx")
+
+[node name="Flicker" parent="." unique_id=1632748019 instance=ExtResource("2_muxo5")]
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 19.0
+offset_bottom = 19.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1414846830]
+position = Vector2(21, 19)
+shape = SubResource("CircleShape2D_hxer5")
