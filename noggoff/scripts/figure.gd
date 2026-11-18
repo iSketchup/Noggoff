@@ -1,9 +1,9 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 
 @onready var Flicker = $Flicker
 
-const SPEED = 300.0
+const SPEED = 6
 const JUMP_VELOCITY = -400.0
 
 var direction :Vector2= Vector2.ZERO
@@ -13,14 +13,20 @@ func _ready() -> void:
 	Flicker.flicked.connect(move)
 
 
-func _physics_process(delta: float) -> void:
+func _input(event: InputEvent) -> void:
 
+	if event is InputEventKey:
+		if event.keycode == KEY_SPACE:
+			linear_velocity = Vector2.ZERO
+			
+			
 	
-	velocity = direction * SPEED
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	
+	state.linear_velocity += direction * SPEED
+	print(linear_velocity)
 	direction = Vector2.ZERO
 
-
-	move_and_slide()
 
 func  move(vec: Vector2)-> void:
 	direction = vec

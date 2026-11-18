@@ -2,7 +2,44 @@
 
 [ext_resource type="PackedScene" uid="uid://byu4jddtq2uv4" path="res://scenes/Figure.tscn" id="1_o5qli"]
 
-[node name="Node2D" type="Node2D" unique_id=470378594]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hxer5"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hxer5"]
+normal = Vector2(0.001602562, -0.99999875)
+distance = -651.99756
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4qx65"]
+normal = Vector2(-0.9999332, 0.011559921)
+distance = -1142.7386
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_latso"]
+normal = Vector2(0.9994629, 0.032769278)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pwdul"]
+normal = Vector2(0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1847766850]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=410701541]
+position = Vector2(895, -2)
+physics_material_override = SubResource("PhysicsMaterial_hxer5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1318680157]
+shape = SubResource("WorldBoundaryShape2D_hxer5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=762951186]
+position = Vector2(-890, 11)
+shape = SubResource("WorldBoundaryShape2D_4qx65")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=154841166]
+position = Vector2(-895, 2)
+shape = SubResource("WorldBoundaryShape2D_latso")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=373884695]
+position = Vector2(-895, 2)
+shape = SubResource("WorldBoundaryShape2D_pwdul")
 
 [node name="Figure" parent="." unique_id=680940300 instance=ExtResource("1_o5qli")]
-position = Vector2(324, 200)
+position = Vector2(405, 229)
